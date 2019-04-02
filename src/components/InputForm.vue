@@ -8,9 +8,13 @@
         <input id="eventcode" v-model="eventcode" placeholder="Your event code" type="text" autofocus>
 
         <button type="submit" id="contact-submit" v-on:click="onClick" >Submit</button>
-        <p>
+        <p class="note">
           Do not have event code ? Download mobile app
           <a>here</a>
+        </p>
+        <p class="note">
+          Or check some of the open-sourced component
+          <a href="https://github.com/nuhamind2">here</a>
         </p>
         <p class="copyright">
           Designed by
@@ -53,7 +57,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding: 30vh 0 0 0;
+  padding: 10vh 0 0 0;
 }
 
 .body-container {
@@ -134,5 +138,9 @@ export default {
 .copyright {
   text-align: center;
   font-size: xx-small;
+}
+
+.note{
+  margin-bottom: 0px;
 }
 </style>
