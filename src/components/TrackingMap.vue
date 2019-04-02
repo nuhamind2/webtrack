@@ -72,7 +72,7 @@ export default {
         console.log("error verified");
         self.$router.push("/input");
       }
-    });
+    });    
 
     function initMqtt() {
       let self = this
