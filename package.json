@@ -8,7 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.6.6"
+    "@types/leaflet": "^1.4.3",
+    "axios": "^0.18.0",
+    "hapi": "^18.1.0",
+    "inert": "^5.1.2",
+    "leaflet": "^1.4.0",
+    "mqtt": "^2.18.8",
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.2",
+    "vue2-leaflet": "^2.0.2",
+    "websocket-stream": "^5.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
