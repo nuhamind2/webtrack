@@ -1,6 +1,4 @@
 'use strict';
-
-
 const Path = require('path');
 const Inert = require('inert');
 const Hapi = require('hapi');
@@ -19,6 +17,13 @@ const server = Hapi.server({
 const provision = async () => {
 
     await server.register(Inert);
+    await server.register({
+        plugin: require('hapi-pino'),
+        options: {
+            prettyPrint: true,
+            logEvents: ['response', 'onPostStart']
+        }
+    });
 
     server.route({
         method: 'GET',
