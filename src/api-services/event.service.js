@@ -1,5 +1,9 @@
 import axios from 'axios'
-axios.defaults.baseURL = "http://localhost:3000/"
+
+const isProd = process.env.NODE_ENV === 'production'
+
+axios.defaults.baseURL = isProd ? 'https://api.pirantiempuk.com' : 'http://127.0.0.1:10002'
+console.log(axios.defaults.baseURL)
 
 export default{
     check(eventcode){
