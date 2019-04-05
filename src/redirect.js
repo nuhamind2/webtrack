@@ -24,7 +24,6 @@ const provision = async () => {
     server.route({
         method: 'GET',
         path: '/',
-        vhost:["pirantiempuk.com","www.pirantiempuk.com"],
         handler: function (request, h) {
             return h.redirect("https://dash.pirantiempuk.com")
         }

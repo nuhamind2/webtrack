@@ -28,7 +28,6 @@ const provision = async () => {
     server.route({
         method: 'GET',
         path: '/{param*}',
-        vhost:"dash.pirantiempuk.com",
         handler: {
             directory: {
                 path: '.',
