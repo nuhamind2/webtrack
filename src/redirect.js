@@ -4,19 +4,15 @@ const Inert = require('inert');
 const Hapi = require('hapi');
 
 const server = Hapi.server({
-    port: 10001,
+    port: 10003,
     host: 'localhost',
     routes: {
-        cors: true,
-        files: {
-            relativeTo: Path.join(__dirname, 'dist')
-        }
+        cors: true
     }
 });
 
 const provision = async () => {
 
-    await server.register(Inert);
     await server.register({
         plugin: require('hapi-pino'),
         options: {
@@ -27,14 +23,10 @@ const provision = async () => {
 
     server.route({
         method: 'GET',
-        path: '/{param*}',
-        vhost:"dash.pirantiempuk.com",
-        handler: {
-            directory: {
-                path: '.',
-                redirectToSlash: true,
-                index: true,
-            }
+        path: '/',
+        vhost:["pirantiempuk.com","www.pirantiempuk.com"],
+        handler: function (request, h) {
+            return h.redirect("https://dash.pirantiempuk.com")
         }
     });
 
