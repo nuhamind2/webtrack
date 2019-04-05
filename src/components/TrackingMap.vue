@@ -42,7 +42,7 @@ export default {
       msg: "Welcome to Your Vue.js App!",
       zoom: 13,
       center: L.latLng(-7.7894, 110.3798),
-      url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+      url: "https://{s}.tile.osm.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       icon: L.divIcon({ className: "div-icon" }),
