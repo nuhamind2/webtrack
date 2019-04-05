@@ -10,10 +10,10 @@
         <button type="submit" id="contact-submit" v-on:click="onClick" >Submit</button>
         <p class="note">
           Do not have event code ? Download mobile app
-          <a>here</a>
+          <a href="https://github.com/nuhamind2/android-gps-beacon/raw/master/project/app/release/app-release.apk">here</a>
         </p>
         <p class="note">
-          Or check some of the open-sourced component
+          Some of the component used to build this website is avalaible 
           <a href="https://github.com/nuhamind2">here</a>
         </p>
         <p class="copyright">
