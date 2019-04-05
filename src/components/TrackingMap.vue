@@ -52,7 +52,7 @@ export default {
       connected: false,
       markers: {},
       eventcode: "",
-      ready: false
+      ready: true
     };
   },
   created() {
@@ -72,7 +72,12 @@ export default {
         console.log("error verified");
         self.$router.push("/input");
       }
+    }).catch(function(){
+      console.log("success handler failed")
     });    
+    check.catch(function(){
+      console.log("event code check failed")
+    })
 
     function initMqtt() {
       let self = this
