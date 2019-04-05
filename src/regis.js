@@ -15,7 +15,10 @@ function delay(ms) {
 
 const server = Hapi.server({
     port: 10002,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    routes: {
+        cors: true
+    }
 });
 server.route({
     method: 'GET',
