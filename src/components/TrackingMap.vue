@@ -82,7 +82,7 @@ export default {
     function initMqtt() {
       let self = this
       console.log("eventcode : " + eventcode);
-      let mqtt_address =  process.env.NODE_ENV === 'production'?"wss://api.pirantiempuk.com/dashboard_conn":"ws://localhost:9002/"
+      let mqtt_address =  process.env.NODE_ENV === 'production'?"wss://api.gpsinstant.id/dashboard_conn":"ws://localhost:9002/"
       self._client = mqtt.connect(mqtt_address, {
         keepalive: 1000,
         clientId: `webtrc.${Math.random()
