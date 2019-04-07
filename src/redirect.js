@@ -25,7 +25,7 @@ const provision = async () => {
         method: 'GET',
         path: '/',
         handler: function (request, h) {
-            return h.redirect("http://dash.gpsinstant.id")
+            return h.redirect("https://dash.gpsinstant.id")
         }
     });
 
