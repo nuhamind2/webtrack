@@ -8,7 +8,7 @@
         :lat-lng="[payload.lat,payload.lon]"
         :key="key"
       >
-        <l-popup>Asset Id : {{key}}</l-popup>
+        <l-popup>Asset Id : {{payload.clientId}}<br>Name : {{payload.username}}</l-popup>
       </l-marker>
       <l-control position="bottomleft">
         <div id="status">
@@ -95,7 +95,8 @@ export default {
             self.stat++;
             let payload = JSON.parse(packet.payload);
             console.log(JSON.stringify(payload.payload));
-            Vue.set(self.markers, payload.clientId, payload.payload);
+            let data = {...payload.payload,clientId:payload.clientId,username:payload.username}
+            Vue.set(self.markers, payload.clientId, data);
           }
         } catch (e) {
           if (e instanceof SyntaxError) {

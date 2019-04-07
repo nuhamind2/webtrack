@@ -10,9 +10,7 @@
         <button type="submit" id="contact-submit" v-on:click="onClick" >Submit</button>
         <p class="note">
           Do not have event code ? Download mobile app
-          <a href="https://github.com/nuhamind2/android-gps-beacon/raw/master/project/app/release/app-release.apk">here</a>
-        </p>
-        <p class="note">
+          <a href="https://github.com/nuhamind2/android-gps-beacon/raw/master/project/app/release/app-release.apk">here</a><br>
           Some of the component used to build this website is avalaible 
           <a href="https://github.com/nuhamind2">here</a>
         </p>
@@ -142,5 +140,6 @@ export default {
 
 .note{
   margin-bottom: 0px;
+  line-height: normal;
 }
 </style>
