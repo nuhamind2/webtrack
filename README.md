@@ -1,4 +1,5 @@
 # dash2
+Location tracking webapp based on Vuejs, mqtt.js and leaflet.js
 
 ## Project setup
 ```
