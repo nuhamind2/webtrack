@@ -13,9 +13,12 @@ export default {
   name: "app"
 };
 </script>
-
-<style>
+<style >
+#app{
+  margin:0;
+}
 body{
   margin:0;
+
 }
 </style>
