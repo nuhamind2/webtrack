@@ -1,6 +1,6 @@
 <template>
     <div>
-        help
+        Sidebar under construction
     </div>
 </template>
 

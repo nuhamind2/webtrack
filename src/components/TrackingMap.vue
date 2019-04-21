@@ -1,6 +1,6 @@
 <template>
   <div v-if="ready" :class="$style.page">
-    <!-- <sidebar></sidebar> -->
+    <sidebar v-if="dsidebar"></sidebar>
     <l-map :zoom="zoom" :center="center" ref="myMap">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <l-marker
@@ -49,6 +49,14 @@ export default {
     Sidebar
   },
   mixins: [L],
+  props: {
+    sidebar: {
+      type: Boolean
+    },
+    eventcode:{
+      type: String
+    }
+  },
   data() {
     return {
       msg: "Welcome to Your Vue.js App!",
@@ -65,22 +73,22 @@ export default {
       connect_status: "disconnected",
       connected: false,
       markers: {},
-      eventcode: "",
-      ready: true
+      ready: true,
+      dsidebar : this.sidebar
     };
   },
   methods: {
     clickHandler() {
-      window.alert("and mischievous");
+      this.dsidebar = !this.dsidebar;
     }
   },
   created() {
     let self = this;
-    let eventcode = self.$route.query.eventcode;
+    console.log("created")
+    let eventcode = this.eventcode
     if (eventcode == undefined) {
       self.$router.push("/input");
     }
-    self.eventcode = eventcode;
     let check = EventService.check(eventcode);
     check
       .then(res => {

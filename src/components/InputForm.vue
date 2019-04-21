@@ -37,7 +37,6 @@ export default {
     let eventcode = localStorage.getItem("eventcode");
     if (eventcode != undefined) {
       console.log("auto set with " + eventcode)
-      this.eventcode = eventcode
     }
   },
   methods: {
