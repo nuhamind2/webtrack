@@ -1,25 +1,36 @@
 <template>
   <div :class="$style.page" v-on:keyup.enter="onClick">
-      <div :class="$style.innerform">
-        <h3>Hello</h3>
-        <h4>Enter your event code and start tracking</h4>
+    <div :class="$style.innerform">
+      <h3>Hello</h3>
+      <h4>Enter your event code and start tracking</h4>
 
-        <input id="eventcode" v-model="eventcode" placeholder="Your event code" type="text" autofocus>
+      <input id="eventcode" v-model="eventcode" placeholder="Your event code" type="text" autofocus>
 
-        <button type="submit" id="contact-submit" v-on:click="onClick" >Submit</button>
-        <p :class="$style.note">
-          Do not have event code ? Download mobile app
-          <a href="https://github.com/nuhamind2/android-gps-beacon/raw/master/project/app/release/app-release.apk">here</a> 
-          or try demo event <b>"DEMO1"</b> and <b>"DEMO2"</b> <br></p>
-        
-        <p>
-          Some of of the source code is  also avalaible 
-          <a href="https://github.com/nuhamind2">here</a></p>
-  
-        <p :class="$style.copyright">
-          Designed by
-          <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a>
-        </p>
+      <button type="submit" id="contact-submit" v-on:click="onClick">Submit</button>
+      <p :class="$style.note">
+        Do not have event code ? Download mobile app
+        <a
+          href="https://github.com/nuhamind2/android-gps-beacon/raw/master/project/app/release/app-release.apk"
+        >here</a>
+        or try demo event
+        <router-link to="/track?eventcode=DEMO1">
+          <b>DEMO1</b>
+        </router-link>and
+        <router-link to="/track?eventcode=DEMO2">
+          <b>DEMO2</b>
+        </router-link>
+        <br>
+      </p>
+
+      <p>
+        Some of of the source code is also avalaible
+        <a href="https://github.com/nuhamind2">here</a>
+      </p>
+
+      <p :class="$style.copyright">
+        Designed by
+        <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a>
+      </p>
     </div>
   </div>
 </template>
@@ -30,13 +41,13 @@ export default {
   name: "InputForm",
   data() {
     return {
-      eventcode :""
+      eventcode: ""
     };
   },
   created() {
     let eventcode = localStorage.getItem("eventcode");
     if (eventcode != undefined) {
-      console.log("auto set with " + eventcode)
+      console.log("auto set with " + eventcode);
     }
   },
   methods: {
@@ -50,7 +61,12 @@ export default {
 </script>
 
 <style module>
-  @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+@import url(
+  https://fonts.googleapis.com/css?family=Roboto:400,
+  300,
+  600,
+  400italic
+);
 
 .innerform {
   background: #f9f9f9;
@@ -59,7 +75,7 @@ export default {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   display: flex;
   flex-direction: column;
-  flex-basis : 25%;
+  flex-basis: 25%;
 }
 
 .page {
@@ -134,8 +150,9 @@ export default {
   font-size: xx-small;
 }
 
-.note{
+.note {
   margin-bottom: 0px;
-  line-height: normal;
+  line-height: 2;
+  font-weight: 550;
 }
 </style>
